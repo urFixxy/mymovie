@@ -129,7 +129,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                 Row(
                                   children: [
                                     _buildBadge(
-                                      '${movie.rating.toStringAsFixed(1)} ★',
+                                      '${movie.voteAverage.toStringAsFixed(1)} ★',
                                     ),
                                     const SizedBox(width: 10),
                                     _buildBadge(movie.releaseDate),
@@ -206,8 +206,8 @@ class _DetailScreenState extends State<DetailScreen> {
                                 ),
                                 const SizedBox(width: 10),
                                 Text(
-                                  movie.duration > 0
-                                      ? '${movie.duration} minutes'
+                                  movie.runtime > 0
+                                      ? '${movie.runtime} minutes'
                                       : 'N/A',
                                   style: const TextStyle(
                                     color: Colors.white70,

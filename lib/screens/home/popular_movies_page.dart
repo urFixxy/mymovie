@@ -199,7 +199,11 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                         child: SectionTitle(title: 'Trending Now'),
                       ),
                       const SizedBox(height: 14),
-                      _buildTrendingList(movies, provider),
+                      Consumer<FavoriteProvider>(
+                        builder: (context, provider, _) {
+                          return _buildTrendingList(movies, provider);
+                        },
+                      ),
                       const SizedBox(height: 28),
                     ],
                   ),

@@ -13,17 +13,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
 
-  final pages = const [
-    PopularMoviesPage(),
-    SearchScreen(),
-    FavoriteScreen(),
-  ];
+  final pages = const [PopularMoviesPage(), SearchScreen(), FavoriteScreen()];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF0A0A0A),
-      body: pages[currentIndex],
+      body: IndexedStack(
+        index: currentIndex,
+        children: const [PopularMoviesPage(), SearchScreen(), FavoriteScreen()],
+      ),
       bottomNavigationBar: _buildBottomNav(),
     );
   }
@@ -38,8 +37,10 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: const Color(0xFF111111),
         selectedItemColor: const Color(0xFFE01A1A),
         unselectedItemColor: Colors.white38,
-        selectedLabelStyle:
-            const TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
+        selectedLabelStyle: const TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.w600,
+        ),
         unselectedLabelStyle: const TextStyle(fontSize: 11),
         elevation: 0,
         onTap: (index) => setState(() => currentIndex = index),

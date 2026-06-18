@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mymovies/widgets/splash_page.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/favorite_provider.dart';
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      home: const LoginScreen(),
+      home: const SplashScreen(),
     );
   }
 }

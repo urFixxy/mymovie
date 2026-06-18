@@ -174,29 +174,13 @@ class _FavoriteMovieCard extends StatelessWidget {
                     Row(
                       children: [
                         const Icon(
-                          Icons.calendar_today,
-                          color: Colors.white54,
-                          size: 12,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          movie.releaseDate.isNotEmpty
-                              ? movie.releaseDate
-                              : 'Unknown',
-                          style: const TextStyle(
-                            color: Colors.white54,
-                            fontSize: 11,
-                          ),
-                        ),
-                        const SizedBox(width: 12),
-                        const Icon(
                           Icons.star,
                           color: Colors.amber,
                           size: 12,
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          movie.rating.toStringAsFixed(1),
+                          movie.voteAverage.toStringAsFixed(1),
                           style: const TextStyle(
                             color: Colors.white54,
                             fontSize: 11,

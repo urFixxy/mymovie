@@ -114,7 +114,7 @@ class FeaturedBanner extends StatelessWidget {
         const Icon(Icons.star_rounded, color: Colors.amber, size: 16),
         const SizedBox(width: 4),
         Text(
-          movie.rating.toStringAsFixed(1),
+          movie.voteAverage.toStringAsFixed(1),
           style: const TextStyle(color: Colors.white70, fontSize: 13),
         ),
         const SizedBox(width: 12),

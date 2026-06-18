@@ -97,7 +97,7 @@ class MovieCard extends StatelessWidget {
                         const Icon(Icons.star, color: Colors.amber, size: 18),
                         const SizedBox(width: 6),
                         Text(
-                          movie.rating.toStringAsFixed(1),
+                          movie.voteAverage.toStringAsFixed(1),
                           style: const TextStyle(color: Colors.white70),
                         ),
                         const SizedBox(width: 12),
