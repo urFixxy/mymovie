@@ -43,7 +43,6 @@ class TMDbService {
         final data = jsonDecode(response.body);
         print('Search results for "$query": ${data['results']?.length ?? 0}');
         
-        // ===== PERBAIKAN: Gunakan fromTMDb =====
         return (data['results'] as List)
             .map((e) => Movie.fromTMDb(e))
             .toList();
@@ -134,58 +133,6 @@ class TMDbService {
       }
     } catch (e) {
       print('Error getting related movies: $e');
-      return [];
-    }
-  }
-
-  Future<List<Movie>> getMoviesByGenre(int genreId) async {
-    try {
-      final response = await http.get(
-        Uri.parse(
-          '${ApiConfig.baseUrl}/discover/movie?api_key=${ApiConfig.apiKey}&with_genres=$genreId',
-        ),
-        headers: {'Authorization': 'Bearer ${ApiConfig.bearerToken}'},
-      );
-
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        print('✅ Movies by genre loaded: ${data['results']?.length ?? 0}');
-        
-        return (data['results'] as List)
-            .map((e) => Movie.fromTMDb(e))
-            .toList();
-      } else {
-        print('❌ Failed to load movies by genre: ${response.statusCode}');
-        return [];
-      }
-    } catch (e) {
-      print('❌ Error getting movies by genre: $e');
-      return [];
-    }
-  }
-
-  Future<List<Movie>> getNowPlayingMovies() async {
-    try {
-      final response = await http.get(
-        Uri.parse(
-          '${ApiConfig.baseUrl}/movie/now_playing?api_key=${ApiConfig.apiKey}',
-        ),
-        headers: {'Authorization': 'Bearer ${ApiConfig.bearerToken}'},
-      );
-
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        print('Now playing movies loaded: ${data['results']?.length ?? 0}');
-        
-        return (data['results'] as List)
-            .map((e) => Movie.fromTMDb(e))
-            .toList();
-      } else {
-        print('Failed to load now playing movies: ${response.statusCode}');
-        return [];
-      }
-    } catch (e) {
-      print('Error getting now playing movies: $e');
       return [];
     }
   }

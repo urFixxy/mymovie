@@ -50,7 +50,6 @@ class FavoriteScreen extends StatelessWidget {
   }
 }
 
-// ============= WIDGET EMPTY FAVORITES =============
 class _EmptyFavoritesWidget extends StatelessWidget {
   const _EmptyFavoritesWidget();
 
@@ -108,7 +107,7 @@ class _FavoriteMovieCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(14),
           child: Stack(
             children: [
-              // Background Image
+
               Positioned.fill(
                 child: Image.network(
                   movie.posterUrl,
@@ -136,7 +135,7 @@ class _FavoriteMovieCard extends StatelessWidget {
                   },
                 ),
               ),
-              // Gradient Overlay
+
               Positioned.fill(
                 child: DecoratedBox(
                   decoration: BoxDecoration(
@@ -152,7 +151,7 @@ class _FavoriteMovieCard extends StatelessWidget {
                   ),
                 ),
               ),
-              // Movie Title & Info
+
               Positioned(
                 left: 12,
                 right: 12,

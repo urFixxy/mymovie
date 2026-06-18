@@ -53,7 +53,6 @@ class _DetailScreenState extends State<DetailScreen> {
                       color: ArenaColors.arenaRed,
                     ),
                     onPressed: () async {
-                      // Tampilkan feedback
                       await favoriteProvider.toggleFavorite(movie);
 
                       if (mounted) {
@@ -74,6 +73,7 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ],
           ),
+
           body: snapshot.connectionState == ConnectionState.waiting
               ? const Center(
                   child: CircularProgressIndicator(color: Colors.white),
@@ -136,6 +136,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   ],
                                 ),
                                 const SizedBox(height: 16),
+
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
@@ -168,6 +169,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           ),
                         ],
                       ),
+
                       Padding(
                         padding: const EdgeInsets.all(16),
                         child: Column(
@@ -220,6 +222,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         ),
                       ),
                       const SizedBox(height: 8),
+
                       Padding(
                         padding: const EdgeInsets.all(16),
                         child: Column(
@@ -248,7 +251,6 @@ class _DetailScreenState extends State<DetailScreen> {
 
                       const SizedBox(height: 24),
 
-                      // ================= RELATED =================
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Column(

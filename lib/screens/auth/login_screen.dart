@@ -25,7 +25,6 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Logo centered
               Center(
                 child: SvgPicture.asset(
                   'lib/assets/images/logo2.svg',
@@ -35,7 +34,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 32),
 
-              // Heading
               const Text(
                 'My Movies',
                 style: TextStyle(
@@ -55,7 +53,6 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 32),
 
-              // Email field
               const Text(
                 'Email',
                 style: TextStyle(

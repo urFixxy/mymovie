@@ -69,7 +69,6 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
       body: FutureBuilder<List<Movie>>(
         future: moviesFuture,
         builder: (context, snapshot) {
-          // Loading state - hanya tampil pertama kali
           if (snapshot.connectionState == ConnectionState.waiting &&
               cachedMovies == null) {
             return const Center(
@@ -77,15 +76,11 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
             );
           }
 
-          // Error state - hanya tampil pertama kali
           if (snapshot.hasError && cachedMovies == null) {
             return _buildErrorState(snapshot.error.toString());
           }
 
-          // Gunakan cached movies atau data dari snapshot
           final movies = cachedMovies ?? snapshot.data;
-
-          // Empty state
           if (movies == null || movies.isEmpty) {
             return Center(
               child: Column(
@@ -114,8 +109,7 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
               ),
             );
           }
-
-          // Success state - gunakan Consumer untuk auto-update
+          
           return Consumer<FavoriteProvider>(
             builder: (context, provider, _) {
               return _buildContent(movies, movies.first, provider);
@@ -161,9 +155,7 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
   ) {
     return Column(
       children: [
-        // AppBar custom (bukan Sliver)
         _buildAppBar(),
-        // Content dengan RefreshIndicator
         Expanded(
           child: RefreshIndicator(
             onRefresh: _refreshMovies,
@@ -175,7 +167,6 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Featured Banner dengan Consumer untuk auto-update
                       Consumer<FavoriteProvider>(
                         builder: (context, favProvider, _) {
                           return FeaturedBanner(
@@ -192,8 +183,6 @@ class _PopularMoviesPageState extends State<PopularMoviesPage> {
                         },
                       ),
                       const SizedBox(height: 28),
-
-                      // Trending Now Section
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16),
                         child: SectionTitle(title: 'Trending Now'),

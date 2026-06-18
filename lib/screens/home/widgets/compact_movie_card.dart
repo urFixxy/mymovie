@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../models/movie.dart';
 import '../../../providers/favorite_provider.dart';
 
-/// Card film versi compact untuk ditampilkan secara horizontal,
-/// dipakai di section "Trending Now".
 class CompactMovieCard extends StatelessWidget {
   final Movie movie;
   final FavoriteProvider provider;

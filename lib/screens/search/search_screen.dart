@@ -266,7 +266,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           : 'Top Rated Movies',
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 22,
+                        fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
