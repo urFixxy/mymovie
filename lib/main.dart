@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'providers/favorite_provider.dart';
 import 'config/theme_colors.dart';
-import 'screens/login_screen.dart';
+import 'screens/auth/login_screen.dart';
 
 void main() {
   runApp(

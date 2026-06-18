@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../models/movie.dart';
-import '../services/tmdb_service.dart';
-import 'detail_screen.dart';
+import '../../models/movie.dart';
+import '../../services/tmdb_service.dart';
+import '../common/detail_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -130,10 +130,12 @@ class _SearchScreenState
                   itemBuilder: (context, index) {
                     final movie = movies[index];
                     return GestureDetector(
-                      onTap: () {
+                      onTap: () async {
+                        final movieDetail = await TMDbService().getMovieDetail(movie.id);
+                        if (!mounted) return;
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (_) => DetailScreen(movie: movie)),
+                          MaterialPageRoute(builder: (_) => DetailScreen(movie: movieDetail)),
                         );
                       },
                       child: ClipRRect(

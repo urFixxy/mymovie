@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'home_screen.dart';
+import '../home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,15 +29,15 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: SvgPicture.asset(
                   'lib/assets/images/logo2.svg',
-                  width: 120,
-                  height: 120,
+                  width: 150,
+                  height: 150,
                 ),
               ),
               const SizedBox(height: 32),
 
               // Heading
               const Text(
-                'Welcome Back',
+                'My Movies',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 28,
@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontSize: 14,
                 ),
               ),
-              const SizedBox(height: 36),
+              const SizedBox(height: 32),
 
               // Email field
               const Text(
@@ -87,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 16),
 
               // Password field
               const Text(
@@ -129,23 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                 ),
               ),
-
-              // Forgot password
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 8),
-                  ),
-                  child: const Text(
-                    'Forgot password?',
-                    style: TextStyle(color: Color(0xFFE01A1A), fontSize: 13),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 12),
-
+              const SizedBox(height: 32),
               // Login button
               SizedBox(
                 width: double.infinity,
