@@ -35,6 +35,7 @@ class _DetailScreenState extends State<DetailScreen> {
       future: _movieFuture,
       builder: (context, snapshot) {
         final movie = snapshot.data ?? widget.movie;
+        // ignore: unused_local_variable
         final isFavorite = favoriteProvider.isFavorite(movie.id);
 
         return Scaffold(
